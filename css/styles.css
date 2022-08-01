@@ -108,6 +108,8 @@ color: var(--acsent-logo-color);
 }
 
 .menu-link {
+    position: relative;
+    display: block;
     text-decoration: none;
     font-weight: 500;
     font-size: 14px;
@@ -116,10 +118,33 @@ color: var(--acsent-logo-color);
     color:var(--headlines-color);
     transition: color var(--transition);
 }
-    
+
+.menu-link::after{
+position: absolute;
+ content: '';
+ display: none;
+left: 0;
+bottom: 0;
+border-radius: 2px;
+width: 100%;
+height: 4px;
+background-color:var(--acsent-logo-color);
+border-radius: 2px;
+transition: background-color var(--transition);
+bottom:-33px;
+}
+
 .menu-link:hover,
 .menu-link:focus {
     color: var(--hover-text-color);
+}
+
+
+
+.menu-link:hover::after,
+.menu-link:focus::after
+{
+    display: block;
 }
 
 .contacts-list {
@@ -243,14 +268,7 @@ transition: color var(--transition) background-color var(--transition) box-shado
 }
 
 
-.work {
-    padding-top: 0;
-}
 
-.work-container {
-    display: flex;
-    flex-wrap: wrap;
-}
 
 .hero-button:hover,
 .hero-button:focus{
@@ -258,6 +276,52 @@ transition: color var(--transition) background-color var(--transition) box-shado
     color: var(--text-color-button-main);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     }
+
+
+
+    /* =====================WHATWEDO================== */
+
+    .work {
+        padding-top: 0;
+    }
+
+    .work-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .whatwedo-link {
+        position: relative;
+    }
+
+    .whatwedo-div {
+        position: relative;
+    }
+
+    .whatwedo-sub-title {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--text-color);
+    padding-top: 27px;
+    padding-bottom: 27px;
+    background-color: rgba(47, 48, 58, 0.8);;
+    }
+
+
+
+
+
+
+    /* =====================WHATWEDO================== */
+
 
 .work-process-title {
     visibility: hidden;
